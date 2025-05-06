@@ -2,13 +2,13 @@ import { useState } from 'react';
 import { Button, StyleSheet, Text, TextInput, View } from 'react-native';
 
 export default function App() {
-  const[enterText, setEnterText]= useState('');
-  const[listGoal, setListGoal]= useState([]);
+  const[enterText, setEnterText]= useState(''); //enterText: stores whatever user types in the input box.
+  const[listGoal, setListGoal]= useState([]); //listGoal: stores list of all goals entered.
 
   function enterGoalHandle(enterGoal){
-    setEnterText(enterGoal);    
+    setEnterText(enterGoal);       //This function updates enterText whenever the user types
   }
-  function listGoalHandle(){
+  function listGoalHandle(){  //Adds current goal (enterText) to  listGoal array.
     // console.log(enterText);
     setListGoal(currentGoal => [...currentGoal, enterText]);
   }
